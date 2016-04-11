@@ -9,6 +9,14 @@ module.exports = function(grunt){
             js: {
                 files: ['src/Js/**/*.js'],
                 tasks: ['copy:main']
+            },
+            goldRayCss: {
+                files: ['plugins/GoldRay/src/Sass/**/*.sass'],
+                tasks: ['compass:goldRay'],
+            },
+            goldRaySs: {
+                files: ['plugins/GoldRay/src/Js/**/*.js'],
+                tasks: ['copy:goldRay']
             }
 
         },
@@ -20,6 +28,12 @@ module.exports = function(grunt){
                     environment: 'production'
                 }
             },
+            goldRay: {
+                options: {
+                    sassDie: 'plugins/GoldRay/src/Sass',
+                    cssDir: 'plugins/GoldRay/webroot/css',
+                }
+            },
             dev: {                    // Another target
                 options: {
                     sassDir: 'src/Sass/',
@@ -29,6 +43,12 @@ module.exports = function(grunt){
         },
         copy: {
             main: {
+                cwd: 'plugins/GoldRay/src/Js',
+                expand: true,
+                src: '**',
+                dest: 'plugins/GoldRay/webroot/js'
+            },
+            goldRay:{
                 cwd: 'src/Js',
                 expand: true,
                 src: '**',
@@ -36,6 +56,14 @@ module.exports = function(grunt){
             }
         },
         browserSync: {
+            GoldRay: {
+                bsFiles: {
+                    src : 'plugins/GoldRay/webroot/css'
+                },
+                options: {
+                    proxy: "gym.dev"
+                }
+            },
             dev: {
                 bsFiles: {
                     src : 'webroot/css/'

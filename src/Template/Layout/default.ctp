@@ -24,6 +24,5 @@
 <script>var initValues = JSON.parse('<?php echo $initValues  ?>');</script>
 <?=$this->Html->script('//code.jquery.com/jquery-2.2.0.min.js'); ?>
 <?=$this->Html->script('//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'); ?>
-<?=$this->Html->script('//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'); ?>
 <?= $this->fetch('script') ?>
 </html>
