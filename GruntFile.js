@@ -14,7 +14,7 @@ module.exports = function(grunt){
                 files: ['plugins/GoldRay/src/Sass/**/*.sass'],
                 tasks: ['compass:goldRay'],
             },
-            goldRaySs: {
+            goldRayJs: {
                 files: ['plugins/GoldRay/src/Js/**/*.js'],
                 tasks: ['copy:goldRay']
             }
@@ -30,7 +30,7 @@ module.exports = function(grunt){
             },
             goldRay: {
                 options: {
-                    sassDie: 'plugins/GoldRay/src/Sass',
+                    sassDir: 'plugins/GoldRay/src/Sass',
                     cssDir: 'plugins/GoldRay/webroot/css',
                 }
             },
