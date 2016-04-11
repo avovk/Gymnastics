@@ -197,6 +197,12 @@ Plugin::load('Migrations');
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+switch($_SERVER['HTTP_HOST']){
+    case 'gym.dev':
+        Plugin::load('GoldRay');
+        break;
+}
+
 
 /**
  * Connect middleware/dispatcher filters.
